@@ -31,7 +31,9 @@ const sortMovie = movieDB.movies.sort();
 promInter.innerHTML = "";
 sortMovie.forEach((film, i) => {
     promInter.innerHTML += `
-        <li>${i + 1} ${film}</li>
+    <li class="promo__interactive-item">${i + 1} ${film}
+        <div class="delete"></div>
+    </li>
     `;
 });
 
