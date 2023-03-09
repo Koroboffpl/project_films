@@ -62,10 +62,18 @@ add.addEventListener("click", function(event) {
             `;
         });
         movieDB.movies.sort();
+
+        document.querySelectorAll('.delete').forEach((btndel, i) => {
+            btndel.addEventListener( "click" , () => {
+              document.querySelector('.delete').parentElement.remove();
+              movieDB.movies.splice(i, 1);
+    
+              createMovieList(films, parent);
+            });
+        });
     }
 
-  
-
+   
 });
 
 
