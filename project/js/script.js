@@ -71,9 +71,14 @@ add.addEventListener("click", function(event) {
               createMovieList(movieDB.movies, promInter);
             });
         });
+        let checkbox = document.querySelector("input[type='checkbox']");
+        if (checkbox.checked) {
+            console.log("Добавляем любимый фильм");
+        } else {
+           
+        }
     }
 
-   
 });
 
 
