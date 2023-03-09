@@ -47,7 +47,7 @@ add.addEventListener("click", function(event) {
         movieDB.movies.push(input);
       
     }
-
+    document.querySelector('.adding__input').value = "";
     createMovieList(movieDB.movies, promInter);
     });
     createMovieList(movieDB.movies, promInter);
