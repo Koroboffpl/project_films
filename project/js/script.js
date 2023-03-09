@@ -45,14 +45,12 @@ add.addEventListener("click", function(event) {
 
        
         movieDB.movies.push(input);
-     
-
-       
+      
     }
 
     createMovieList(movieDB.movies, promInter);
     });
-
+    createMovieList(movieDB.movies, promInter);
     function createMovieList(films, parent) {
         parent.innerHTML = "";
 
