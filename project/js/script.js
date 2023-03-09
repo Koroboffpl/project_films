@@ -68,7 +68,7 @@ add.addEventListener("click", function(event) {
               document.querySelector('.delete').parentElement.remove();
               movieDB.movies.splice(i, 1);
     
-              createMovieList(films, parent);
+              createMovieList(movieDB.movies, promInter);
             });
         });
     }
