@@ -26,7 +26,7 @@ const movieDB = {
 };
 const promInter = document.querySelector('.promo__interactive-list');
 //const newLi = document.getElementsByClassName('promo__interactive-list');
-const sortMovie = movieDB.movies.sort();
+
 
 
 let add = document.getElementById("btnflm");
@@ -36,7 +36,7 @@ add.addEventListener("click", function(event) {
     event.preventDefault();
     let input = document.querySelector('.adding__input').value;
    // movieDB.movies.push(input);
-   
+  
     if (input) {
 
         if (input.length > 21) {
@@ -47,25 +47,33 @@ add.addEventListener("click", function(event) {
         movieDB.movies.push(input);
       
     }
+   
     document.querySelector('.adding__input').value = "";
+    sortMovie(movieDB.movies);
     createMovieList(movieDB.movies, promInter);
     });
-    createMovieList(movieDB.movies, promInter);
-    function createMovieList(films, parent) {
-        parent.innerHTML = "";
+  
 
+    const sortMovie = (arr) => {
+        arr.sort();
+    };
+    
+    function createMovieList(films, parent) {
+        
+        parent.innerHTML = "";
+      
         films.forEach((film, i) => {
             parent.innerHTML += `
             <li class="promo__interactive-item">${i + 1} ${film}
                 <div class="delete"></div>
             </li>
             `;
+            
         });
-        movieDB.movies.sort();
-
+        
         document.querySelectorAll('.delete').forEach((btndel, i) => {
             btndel.addEventListener( "click" , () => {
-              document.querySelector('.delete').parentElement.remove();
+              btndel.parentElement.remove();
               movieDB.movies.splice(i, 1);
     
               createMovieList(movieDB.movies, promInter);
@@ -76,9 +84,10 @@ add.addEventListener("click", function(event) {
             console.log("Добавляем любимый фильм");
         } else {
            
-        }
+        };
+    
     }
-
+    createMovieList(movieDB.movies, promInter);
 });
 
 
